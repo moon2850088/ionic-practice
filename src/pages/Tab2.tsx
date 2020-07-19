@@ -34,14 +34,13 @@ const Tab2: React.FC = () => {
             <IonTitle size="large">Photo Gallery</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <ExploreContainer name="Tab 2 page" />
       </IonContent>
       <IonContent>
         <IonGrid>
           <IonRow>
             {photos.map((photo, index) => (
               <IonCol size="6" key={index}>
-                <IonImg src={photo.webviewPath} />
+                <IonImg src={photo.base64 ?? photo.webviewPath} />
               </IonCol>
             ))}
           </IonRow>
